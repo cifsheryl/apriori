@@ -29,13 +29,15 @@ predicciones <- predict(rf_model, test)
 
 
 nuevo_dato <- data.frame(
-  DEPARTAMENTO = factor(1, levels = levels(migracion$DEPARTAMENTO)), 
+  DEPARTAMENTO = factor(1, levels = levels(train$DEPARTAMENTO)), 
   AREA = 1,  
-  PEI3 = 2,  
+  PEI3 = factor("2", levels = levels(train$PEI3)),  
   PEI4 = 30 
 )
 
 prediccion_nueva <- predict(rf_model, nuevo_dato)
+
+prediccion_nueva
 
 
 str(train)
